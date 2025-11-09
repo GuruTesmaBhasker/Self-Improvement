@@ -1,0 +1,69 @@
+body {
+    background: #f5f6fa;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.auth-container {
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 18px;
+    color: #333;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.auth-container input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.auth-container button {
+    padding: 10px 0;
+    background: #4facfe;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.auth-container button:hover {
+    background: #00f2fe;
+}
+
+.auth-container p {
+    margin-top: 18px;
+    font-size: 0.95rem;
+}
+
+.auth-container a {
+    color: #4facfe;
+    text-decoration: none;
+}
+
+#signInMessage, #signUpMessage {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #e74c3c;
+}
