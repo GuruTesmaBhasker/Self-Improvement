@@ -10,10 +10,6 @@
 </head>
 <body>
     <div class="container">
-        <div style="margin: 20px 0; text-align: center;">
-            <button id="loginBtn">Sign in with Google</button>
-            <button id="logoutBtn">Sign out</button>
-        </div>
         <header>
             <h1>Daily Motivator ⚡</h1>
             <p class="subtitle">Start strong, finish stronger 🚀</p>
@@ -190,54 +186,6 @@
         </footer>
     </div>
 
-            <script src="script.js"></script>
-            <script type="module">
-                // Import Firebase core and auth from CDN
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-                import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } 
-                    from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-
-                // Your Firebase config
-                const firebaseConfig = {
-                    apiKey: "AIzaSyCYyTIYCX5bvN7r8BcJvLOKEON1nUaFnQk",
-                    authDomain: "self-improvement-7c7f6.firebaseapp.com",
-                    projectId: "self-improvement-7c7f6",
-                    storageBucket: "self-improvement-7c7f6.appspot.com",
-                    messagingSenderId: "494829137683",
-                    appId: "1:494829137683:web:1e9e6f4a910b02b70774e6",
-                    measurementId: "G-43X839WMSM"
-                };
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-
-                const auth = getAuth();
-                const provider = new GoogleAuthProvider();
-
-                // Try to sign in when button clicked
-                document.getElementById("loginBtn")?.addEventListener("click", async () => {
-                    try {
-                        const res = await signInWithPopup(auth, provider);
-                        console.log("Signed in as:", res.user.displayName, "UID:", res.user.uid);
-                        alert("Signed in!");
-                    } catch (e) {
-                        console.error(e);
-                        alert("Sign-in failed. Check console.");
-                    }
-                });
-
-                // Sign out (optional button)
-                document.getElementById("logoutBtn")?.addEventListener("click", () => signOut(auth));
-
-                // Watch login state
-                onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        console.log("Logged in:", user.uid);
-                        // Show app UI
-                    } else {
-                        console.log("Logged out");
-                        // Show login UI
-                    }
-                });
-            </script>
+    <script src="script.js"></script>
 </body>
 </html>
