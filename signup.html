@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Sign Up - Daily Motivator</title>
     <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script type="module" src="Register.js" defer></script>
 </head>
 <body>
     <div class="auth-container">
-        <h2>Sign Up</h2>
+        <div class="logo">
+            <h1>Daily Motivator ⚡</h1>
+            <p class="tagline">Start strong, finish stronger 🚀</p>
+        </div>
+        <h2>Create Account</h2>
         <form id="signUpForm">
             <input type="email" id="signUpEmail" placeholder="Email" required>
             <input type="password" id="signUpPassword" placeholder="Password" required>
             <button type="submit">Sign Up</button>
         </form>
-        <p>Already have an account? <a href="index.html">Sign in</a></p>
+        <p>Already have an account? <a href="index.html">Sign in here</a></p>
         <div id="signUpMessage"></div>
     </div>
     

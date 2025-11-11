@@ -210,7 +210,7 @@ regenerateTasksBtn?.addEventListener("click", async () => {
 onUserReady((user) => {
   if (!user) {
     // Redirect to sign-in if not authenticated
-    window.location.href = "signin.html";
+    window.location.href = "index.html";
   } else {
     console.log("User signed in:", user.email);
   }

@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // Redirect to main app after successful sign in
           setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "dashboard.html";
           }, 1500);
         })
         .catch((error) => {
