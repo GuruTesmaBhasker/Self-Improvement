@@ -1,6 +1,39 @@
 import { getCurrentUser, getDay } from './database.js';
-import { calculateCategoryTotals, getCategoryColor, getCategoryEmoji } from './classify.js';
 import { renderAnalytics } from './analytics.js';
+
+// Helper functions for categories (replaced classify.js)
+function getCategoryColor(category) {
+    const colors = {
+        'productive': '#4CAF50',
+        'neutral': '#9E9E9E', 
+        'waste': '#F44336'
+    };
+    return colors[category.toLowerCase()] || colors.neutral;
+}
+
+function getCategoryEmoji(category) {
+    const emojis = {
+        'productive': '✅',
+        'neutral': '⚪',
+        'waste': '❌'
+    };
+    return emojis[category.toLowerCase()] || emojis.neutral;
+}
+
+function calculateCategoryTotals(activities) {
+    const totals = { productive: 0, neutral: 0, waste: 0 };
+    
+    activities.forEach(activity => {
+        const minutes = activity.minutes || 0;
+        const category = (activity.category || 'neutral').toLowerCase();
+        
+        if (category === 'productive') totals.productive += minutes;
+        else if (category === 'waste') totals.waste += minutes;
+        else totals.neutral += minutes;
+    });
+    
+    return totals;
+}
 
 class ActivityTracker {
     constructor() {
